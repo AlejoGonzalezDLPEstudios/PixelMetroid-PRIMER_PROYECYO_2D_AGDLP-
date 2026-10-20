@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 43033a14d5543e041b11837947e91318
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-idle/Anim/PlayerIdle.prefab
+  uploadId: 907348

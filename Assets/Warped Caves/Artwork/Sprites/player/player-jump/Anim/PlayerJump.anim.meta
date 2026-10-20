@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 044cc230bc15ae749838d0548d4d8e69
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-jump/Anim/PlayerJump.anim
+  uploadId: 907348

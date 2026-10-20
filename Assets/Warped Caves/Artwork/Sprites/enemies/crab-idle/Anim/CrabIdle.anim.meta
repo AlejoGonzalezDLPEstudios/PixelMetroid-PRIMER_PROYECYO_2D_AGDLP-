@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0526201f983e7cb44ada9f1026095f56
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/enemies/crab-idle/Anim/CrabIdle.anim
+  uploadId: 907348

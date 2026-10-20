@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fcc2a5f18666f614baf2652b9bcaf520
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/Fx/impact/Anim/Impact.controller
+  uploadId: 907348

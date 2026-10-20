@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a61b38886ed3374eb491ce9305525dc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-hurt/Anim/PlayerHurt.prefab
+  uploadId: 907348

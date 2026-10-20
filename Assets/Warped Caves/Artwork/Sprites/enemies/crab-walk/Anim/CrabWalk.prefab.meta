@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dff95899ca681ca4a81bbdec205f1f5e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/enemies/crab-walk/Anim/CrabWalk.prefab
+  uploadId: 907348

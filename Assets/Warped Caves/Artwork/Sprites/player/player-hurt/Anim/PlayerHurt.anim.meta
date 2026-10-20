@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 693544e2e91cc7c47ae11df8712f3997
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-hurt/Anim/PlayerHurt.anim
+  uploadId: 907348

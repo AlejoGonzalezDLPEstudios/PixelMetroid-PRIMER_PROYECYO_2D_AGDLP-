@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 150eb52bb98228343b9fce638623bcee
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Warped Caves Expansion Pack/Assets/Warped Player
+    Addon files/Ladder/Anim/Ladder.controller
+  uploadId: 907348

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd4cdb106a0f2ab4892c12095ae3beca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Warped Caves Expansion Pack/Assets/Warped Player
+    Addon files/Ball/Sprites/Anim/Ball.controller
+  uploadId: 907348

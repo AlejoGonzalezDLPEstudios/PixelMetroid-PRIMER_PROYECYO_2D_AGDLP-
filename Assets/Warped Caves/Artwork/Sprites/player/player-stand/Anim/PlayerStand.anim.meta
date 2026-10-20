@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: db2b8f8a55122c84785eca476430f5c3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-stand/Anim/PlayerStand.anim
+  uploadId: 907348

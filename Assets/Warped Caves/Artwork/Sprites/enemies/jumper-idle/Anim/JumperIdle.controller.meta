@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 152c52a97d2bc3e438b8078ca8630c25
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/enemies/jumper-idle/Anim/JumperIdle.controller
+  uploadId: 907348

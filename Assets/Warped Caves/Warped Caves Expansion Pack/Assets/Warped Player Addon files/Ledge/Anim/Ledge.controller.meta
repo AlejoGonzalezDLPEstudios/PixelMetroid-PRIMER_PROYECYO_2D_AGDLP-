@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ff8a05794986d984b9c50dde89c1ec4d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Warped Caves Expansion Pack/Assets/Warped Player
+    Addon files/Ledge/Anim/Ledge.controller
+  uploadId: 907348

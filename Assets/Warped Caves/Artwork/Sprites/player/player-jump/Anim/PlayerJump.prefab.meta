@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2287e276ef0f7934fb9da4a45abed443
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-jump/Anim/PlayerJump.prefab
+  uploadId: 907348

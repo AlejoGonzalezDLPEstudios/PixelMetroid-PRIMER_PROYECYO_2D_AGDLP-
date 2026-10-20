@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e8ab6d324df0a9b49a7b90a77a2b4292
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-run/Anim/PlayerRun.prefab
+  uploadId: 907348

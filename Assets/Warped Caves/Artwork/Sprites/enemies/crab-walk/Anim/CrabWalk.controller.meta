@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 27e2007144f73b746af5948a4ea82974
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/enemies/crab-walk/Anim/CrabWalk.controller
+  uploadId: 907348

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 975d345232be476468dc9e99bb4ed0dd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-idle/Anim/PlayerIdle.anim
+  uploadId: 907348

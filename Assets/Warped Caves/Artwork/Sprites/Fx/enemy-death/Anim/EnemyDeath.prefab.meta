@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 50c59aeabf75d1443bbae5ba862ed3bc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/Fx/enemy-death/Anim/EnemyDeath.prefab
+  uploadId: 907348

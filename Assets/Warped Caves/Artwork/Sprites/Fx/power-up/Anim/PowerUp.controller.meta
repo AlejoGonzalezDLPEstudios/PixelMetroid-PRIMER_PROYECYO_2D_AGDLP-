@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 81b995a78d80edf4aafc72d3a938c91c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/Fx/power-up/Anim/PowerUp.controller
+  uploadId: 907348

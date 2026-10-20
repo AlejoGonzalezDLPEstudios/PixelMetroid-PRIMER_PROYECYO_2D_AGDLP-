@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c46e8ae0ac803bc41867f6ee170e18e2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Warped Caves Expansion Pack/Assets/Warped Player
+    Addon files/dash/Anim/DashLoop.controller
+  uploadId: 907348

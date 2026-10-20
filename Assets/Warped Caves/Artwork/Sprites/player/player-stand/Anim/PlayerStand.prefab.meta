@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 660efb1e287423f4d9a5ecd1bc88184d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Artwork/Sprites/player/player-stand/Anim/PlayerStand.prefab
+  uploadId: 907348

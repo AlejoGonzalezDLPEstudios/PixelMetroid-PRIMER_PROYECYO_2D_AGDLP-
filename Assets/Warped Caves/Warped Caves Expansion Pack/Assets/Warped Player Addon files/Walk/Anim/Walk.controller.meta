@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5d2846a29eddfe845bb6c3e594c7b443
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 103250
+  packageName: Warped Caves
+  packageVersion: 2.0
+  assetPath: Assets/Warped Caves/Warped Caves Expansion Pack/Assets/Warped Player
+    Addon files/Walk/Anim/Walk.controller
+  uploadId: 907348
