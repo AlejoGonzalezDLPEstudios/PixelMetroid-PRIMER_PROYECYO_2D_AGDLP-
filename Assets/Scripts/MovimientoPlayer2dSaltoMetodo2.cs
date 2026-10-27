@@ -32,12 +32,25 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
 
     private Rigidbody2D fisica;
+
+    private SpriteRenderer renderizador; //este componente nos ayudará para poder voltear al personaje al moverse de un lado u otro
+
+    private Animator animador;
+    private float umbralAnimacion = 0.1f;
+
     private Vector2 entradaMovimiento;
     private Boolean tocandoSuelo;
+
+
+
 
     private void Awake()
     {
         fisica = GetComponent<Rigidbody2D>();
+
+        renderizador = GetComponent<SpriteRenderer>();
+
+        animador = GetComponent<Animator>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,9 +70,35 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         {
             saltoPendiente = true;
         }
+
+        AnimarJugador();
     }
 
-    private void FixedUpdate()
+    private void AnimarJugador()
+    {
+        if (animador == null)
+        {
+            return;
+        }
+
+        if (!tocandoSuelo)
+        {
+            animador.Play("JugadorSaltando"); //Si el jugador NO esta tocando el suelo, reporducira la animación de salto
+        }
+
+        else if (Math.Abs(fisica.linearVelocity.x) > umbralAnimacion )
+        {
+            animador.Play("JugadorCorriendo"); //Si la velocidad lineal (o mas bien su valor absoluto) es mayor a 0, pues el jugador se esta moviendo y por ende, debemos reproducir la animacion de correr
+
+        }
+
+        else
+        {
+            animador.Play("JugadorParada");
+        }
+    }
+
+    private void FixedUpdate() // Aqui solo definimos acciones que tengan que ver directamente CON LAS FÍSICAS
     {
         fisica.linearVelocity = new Vector2(entradaMovimiento.x * velocity, fisica.linearVelocity.y);
 
@@ -70,6 +109,26 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
         saltoPendiente = false;
 
+        OrientarSprite();
+
+    }
+
+    private void OrientarSprite()
+    {
+        if (renderizador == null) // Si es valor de renderizado es nulo, nos salimos del programa
+        {
+            return;
+        }
+
+        if (fisica.linearVelocity.x > 0) // Si la velocidad lineal del jugador es mayor a cero, significa que se esta moviendo a la derecha, por ende, no activamos el flipeo del sprite
+        {
+            renderizador.flipX = false;
+        }
+
+        if (fisica.linearVelocity.x < 0) // por otro lado, si la velocidad lineal del jugador es menor a cero, significa que se esta moviendo a la izquierda, por ende, SI tenemos que activar el flipeo del sprite
+        {
+            renderizador.flipX = true;
+        }
     }
 
     private void OnEnable() //Se ejecuta mientras el juego esta "activado", activando respectivamente las opciones necesarias para que no se corrompa todo
