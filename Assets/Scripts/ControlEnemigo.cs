@@ -28,6 +28,20 @@ public class ControlEnemigo : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player")) return;
+
+        if (collision.gameObject.TryGetComponent(out MovimientoPlayer2dSaltoMetodo2 jugador))
+        {
+            jugador.ReaparecerJugador();
+        }
+        else
+        {
+            Debug.LogError("El objeto Player requiere un Script de controlador en la raíz.");
+        }
+    }
+
     private void FixedUpdate()
     {
         Vector2 posicionObjetivo;

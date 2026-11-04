@@ -41,6 +41,10 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
     private Vector2 entradaMovimiento;
     private Boolean tocandoSuelo;
 
+    [Header("Re-Spawn")]
+
+    [SerializeField] private Transform spawnPoint;
+
 
 
 
@@ -178,6 +182,19 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
             Gizmos.color = Color.red;
 
             Gizmos.DrawSphere(bolaColision.position, groundDistance);
+        }
+    }
+
+    public void ReaparecerJugador() //Con este metodo es el que luego utilizaremos en el script de los enemigos para detectar la colision de los coliders, y de ese modo, hacer que pueda recibir "daño"
+    {
+        fisica.position = (Vector2)spawnPoint.position;
+        fisica.linearVelocity = Vector2.zero;
+
+        if (spawnPoint == null)
+        {
+            Debug.LogError("Aun no se agrega un objeto 'SpawnPoint', solucionalo y vuelve a intentar", this);
+            enabled = false;
+            return;
         }
     }
 }
