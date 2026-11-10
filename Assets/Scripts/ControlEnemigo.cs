@@ -34,7 +34,7 @@ public class ControlEnemigo : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out MovimientoPlayer2dSaltoMetodo2 jugador))
         {
-            jugador.ReaparecerJugador();
+            jugador.quitarVida();
         }
         else
         {
@@ -44,6 +44,11 @@ public class ControlEnemigo : MonoBehaviour
 
     private void FixedUpdate()
     {
+        MovimientoEnemigoVertical();
+    }
+
+    private void MovimientoEnemigoVertical()
+    {
         Vector2 posicionObjetivo;
 
         if (velocity <= 0) { return; }
@@ -51,7 +56,8 @@ public class ControlEnemigo : MonoBehaviour
         if (movimientoHaciaArriba)
         {
             posicionObjetivo = posicionFinal;
-        } else
+        }
+        else
         {
             posicionObjetivo = posicionInicial;
         }

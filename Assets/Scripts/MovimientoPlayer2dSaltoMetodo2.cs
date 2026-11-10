@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -46,6 +47,29 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
 
+    [Header("Sistema de puntos")]
+
+    [SerializeField] private int puntuacion;
+
+    [Header("Sistema de Vida")]
+
+    [SerializeField] private int salud = 10;
+    [SerializeField, Range(1, 15)] private float tiempoInvulnerable = 1f;
+
+    private Color colorOriginal;
+    private Boolean vulnerable = true;
+
+    public int Vidas => salud; //Esto es lo mismo que implementar un GET, nos sirve para ver el valor de un atributo privado desde afuera de la clase en cualquier archivo de codigo
+
+    [Header("Tiempo")]
+
+    private float tiempoInicio;
+    private float tiempoReal;
+
+    [SerializeField] private int tiempoEmpleado;
+
+    [SerializeField, Min(1)] private int tiempoLimiteNvl = 100;
+
 
 
     private void Awake()
@@ -60,7 +84,14 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (renderizador != null)
+        {
+            colorOriginal = renderizador.color;
+        } else { Debug.LogError("Al jugador le hace falta su SpriteRenderer, por ende no poseemos forma de cambar su color");  }
+
+
+        tiempoInicio = Time.time;
+
     }
 
     // Update is called once per frame
@@ -68,14 +99,33 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
     {
         entradaMovimiento = XMovement.action.ReadValue<Vector2>();
 
+        SaltoJugador();
+
+        AnimarJugador();
+
+        comprobarFinTiempoJuego();
+    }
+
+    private void comprobarFinTiempoJuego()
+    {
+        tiempoReal = Time.time - tiempoInicio;
+        tiempoEmpleado= Mathf.FloorToInt(tiempoReal);
+
+        if (tiempoEmpleado >= tiempoLimiteNvl)
+        {
+            FinJuego();
+            return;
+        }
+    }
+
+    private void SaltoJugador()
+    {
         tocandoSuelo = Physics2D.OverlapCircle(bolaColision.position, groundDistance, capaSuelo);
 
-        if(jump.action.WasPressedThisFrame() && tocandoSuelo)
+        if (jump.action.WasPressedThisFrame() && tocandoSuelo)
         {
             saltoPendiente = true;
         }
-
-        AnimarJugador();
     }
 
     private void AnimarJugador()
@@ -104,17 +154,22 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
     private void FixedUpdate() // Aqui solo definimos acciones que tengan que ver directamente CON LAS FÍSICAS
     {
+        MoverJugador();
+
+        OrientarSprite();
+
+    }
+
+    private void MoverJugador()
+    {
         fisica.linearVelocity = new Vector2(entradaMovimiento.x * velocity, fisica.linearVelocity.y);
 
-        if(saltoPendiente)
+        if (saltoPendiente)
         {
             fisica.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         saltoPendiente = false;
-
-        OrientarSprite();
-
     }
 
     private void OrientarSprite()
@@ -196,5 +251,52 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
             enabled = false;
             return;
         }
+    }
+
+    public void IncrementoPutuacion(int gananciaPuntuacion)
+    {
+        if (gananciaPuntuacion <= 0) return;
+
+        puntuacion = puntuacion + gananciaPuntuacion;
+    }
+
+    public void quitarVida()
+    {
+        if (vulnerable == false) { return; } //Con esto nos encargamos de que SOLO puedan quitarnos una vida hasta que se nos acabe la invulnerabilidad, cuando ese no sea el caso nos podran quitar vida con normalidad
+
+        vulnerable = false;
+        salud--;
+
+        if (renderizador != null)
+        {
+            renderizador.color = Color.mediumVioletRed;
+        }
+        
+        if (salud <= 0)
+        {
+            FinJuego();
+            return;
+        }
+
+        Invoke(nameof(HacerVulnerable), tiempoInvulnerable);
+    }
+
+    private void HacerVulnerable()
+    {
+        vulnerable = true;
+
+        if (renderizador != null)
+        {
+            renderizador.color = colorOriginal;
+            
+        }
+    }
+
+    
+
+    private void FinJuego()
+    {
+        Debug.Log("GAME OVER");
+        gameObject.SetActive(false);
     }
 }
