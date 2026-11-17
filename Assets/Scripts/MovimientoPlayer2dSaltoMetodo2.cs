@@ -63,14 +63,19 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
     [Header("Tiempo")]
 
-    private float tiempoInicio;
-    private float tiempoReal;
-
     [SerializeField] private int tiempoEmpleado;
 
     [SerializeField, Min(1)] private int tiempoLimiteNvl = 100;
 
+    private float tiempoInicio;
+    private float tiempoReal;
 
+
+    [Header("Canvas")]
+
+    [SerializeField] private Canvas canvasHud;
+
+    private ControlHUD hud;
 
     private void Awake()
     {
@@ -92,6 +97,9 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
         tiempoInicio = Time.time;
 
+        
+        inicializaHub();
+
     }
 
     // Update is called once per frame
@@ -104,18 +112,30 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         AnimarJugador();
 
         comprobarFinTiempoJuego();
+
+        
     }
 
     private void comprobarFinTiempoJuego()
     {
+        
+
         tiempoReal = Time.time - tiempoInicio;
         tiempoEmpleado= Mathf.FloorToInt(tiempoReal);
+
+        int segundosRestantes = Mathf.CeilToInt(tiempoLimiteNvl - tiempoReal);
+
+        hud.setTiempo(segundosRestantes);
+
+        hud.setPowerUps(GameObject.FindGameObjectsWithTag("Bolutas de energía restantes: ").Length); // <-- Acuerdate de hablar con esto con Andrés, porque ps si deja agarrar los PowerUps pero no los resta :/
 
         if (tiempoEmpleado >= tiempoLimiteNvl)
         {
             FinJuego();
             return;
         }
+
+        
     }
 
     private void SaltoJugador()
@@ -258,6 +278,7 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         if (gananciaPuntuacion <= 0) return;
 
         puntuacion = puntuacion + gananciaPuntuacion;
+       
     }
 
     public void quitarVida()
@@ -266,6 +287,8 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
 
         vulnerable = false;
         salud--;
+
+        hud.setVida(salud);
 
         if (renderizador != null)
         {
@@ -292,6 +315,31 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         }
     }
 
+
+    private void inicializaHub()
+    {
+        if (canvasHud != null)
+        {
+            hud = canvasHud.GetComponent<ControlHUD>();
+        }
+
+        else
+        {
+            Debug.LogError("No se ha encontrado al objeto 'Canvas' dentro de los parametros del script, por favor asignelo e intente nuevamente");
+        }
+
+        if (hud != null)
+        {
+            hud.setVida(salud);
+            hud.setTiempo(tiempoLimiteNvl);
+            hud.setPowerUps(GameObject.FindGameObjectsWithTag("Bolutas de energía restantes: ").Length);
+        }
+
+        else
+        {
+            Debug.LogError("No se encontraron valores asignados en el canvas, por favor verifique e intentelo nuevamente...");
+        }
+    }
     
 
     private void FinJuego()
