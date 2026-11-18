@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -286,6 +287,7 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         if (vulnerable == false) { return; } //Con esto nos encargamos de que SOLO puedan quitarnos una vida hasta que se nos acabe la invulnerabilidad, cuando ese no sea el caso nos podran quitar vida con normalidad
 
         vulnerable = false;
+        
         salud--;
 
         hud.setVida(salud);
@@ -293,10 +295,12 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
         if (renderizador != null)
         {
             renderizador.color = Color.mediumVioletRed;
+            animador.Play("JugadorMuerte");
         }
         
         if (salud <= 0)
         {
+            animador.Play("JugadorMuerte");
             FinJuego();
             return;
         }
@@ -345,6 +349,7 @@ public class MovimientoPlayer2dSaltoMetodo2 : MonoBehaviour
     private void FinJuego()
     {
         Debug.Log("GAME OVER");
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 }

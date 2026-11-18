@@ -19,6 +19,11 @@ public class ControlMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void salirDelJuego()
     {
         #if UNITY_EDITOR
